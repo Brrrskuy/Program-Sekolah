@@ -1,0 +1,39 @@
+{
+  "name": "program-sekolah",
+  "version": "1.0.0",
+  "description": "Program Sekolah berbasis Desktop dan dapat diakses untuk guru , program ini diperuntukan untuk guru agar bisa mengabsen anak muridnya dan mencek nilai siswa",
+  "main": "index.js",
+  "scripts": {
+    "test": "program sekolah"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brrrskuy77/Program-Sekolah.git"
+  },
+  "keywords": [
+    "Program",
+    "Sekolah",
+    "Desktop",
+    "Program",
+    "Sekolah",
+    "Netbeans",
+    "Program",
+    "Sekolah",
+    "SDIT",
+    "Daarul",
+    "Fataa"
+  ],
+  "author": "Akbar Asif Subagiyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brrrskuy77/Program-Sekolah/issues"
+  },
+  "homepage": "https://github.com/Brrrskuy77/Program-Sekolah#readme",
+  "dependencies": {
+    "@types/node": "^20.11.24",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.35"
+  }
+}

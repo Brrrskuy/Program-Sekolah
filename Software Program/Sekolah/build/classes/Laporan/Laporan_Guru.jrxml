@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Laporan_Guru" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="eb28de5d-11bf-43c3-895f-bc646f1c75aa">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     guru.`nig` AS guru_nig,
+     guru.`nama_guru` AS guru_nama_guru,
+     guru.`tempat_lahir` AS guru_tempat_lahir,
+     guru.`tgl_lahir` AS guru_tgl_lahir,
+     guru.`keterangan` AS guru_keterangan,
+     guru.`jk` AS guru_jk,
+     guru.`jabatan` AS guru_jabatan,
+     guru.`lulusan` AS guru_lulusan,
+     guru.`status` AS guru_status,
+     guru.`mengajar` AS guru_mengajar
+FROM
+     `guru` guru]]>
+	</queryString>
+	<field name="guru_nig" class="java.lang.Integer"/>
+	<field name="guru_nama_guru" class="java.lang.String"/>
+	<field name="guru_tempat_lahir" class="java.lang.String"/>
+	<field name="guru_tgl_lahir" class="java.lang.String"/>
+	<field name="guru_jk" class="java.lang.String"/>
+	<field name="guru_mengajar" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="155" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="18" width="555" height="1" uuid="b64ad89d-bec4-4af7-9ad0-1a857515b24e"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="164" y="78" width="279" height="18" uuid="ec3910db-51dd-4e40-89d1-274c3d2e48bf"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Gg. Lurah Muda Blok Gapura No.40, Rt.03/Rw.03, Cimanggis]]></text>
+			</staticText>
+			<image>
+				<reportElement x="43" y="29" width="114" height="102" uuid="8b89f7b9-c74c-4d88-bd73-449f8640611f"/>
+				<imageExpression><![CDATA["C:\\Users\\user\\Downloads\\10-03-tgl24\\sdit.jpg"]]></imageExpression>
+			</image>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="140" width="555" height="1" uuid="ec30557b-1763-4326-bebe-4e93db32cc54"/>
+				<graphicElement>
+					<pen lineWidth="1.25"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="157" y="34" width="295" height="44" uuid="ed661f7f-1662-4705-a756-7d66ee9153c1"/>
+				<textElement textAlignment="Center">
+					<font fontName="SansSerif" size="34" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SDIT Daarul Fataa]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="205" y="96" width="211" height="18" uuid="7e2625b8-a45f-4f01-af6d-eb585039499e"/>
+				<textElement textAlignment="Center">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Kec. Bojong Gede, Bogor, Jawa Barat 16920]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="66">
+			<staticText>
+				<reportElement x="188" y="16" width="203" height="33" uuid="133812e5-d693-4350-81b4-dc01707e329c"/>
+				<textElement textAlignment="Center">
+					<font size="26" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data Guru]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="54" width="554" height="1" uuid="96d8c43d-b716-41e4-a52a-9fbd0f7d7f88"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+			<line>
+				<reportElement x="0" y="10" width="554" height="1" uuid="18747498-ab00-4cca-b90d-4ab312a28ba9"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineStyle="Double" lineColor="#000000"/>
+				</graphicElement>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="0b09e206-26a8-4522-b3c3-fdaaef244d38"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="0" y="0" width="92" height="15" forecolor="#736343" backcolor="#CCCCCC" uuid="7a56271a-ac82-419d-bc20-29e88f2ecc76"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[NIG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="92" y="0" width="92" height="15" forecolor="#736343" backcolor="#CCCCCC" uuid="84b7c074-376b-4e2c-8081-a6ada55f5d00"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Nama Guru]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="184" y="0" width="92" height="15" forecolor="#736343" backcolor="#CCCCCC" uuid="01f9c51f-7ad2-4ac6-ab4b-54b2d7115879"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tempat Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="276" y="0" width="92" height="15" forecolor="#736343" backcolor="#CCCCCC" uuid="d8e2d810-c9ef-4dcd-84d6-0bc88aa41988"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Tanggal Lahir]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="368" y="0" width="92" height="15" forecolor="#736343" backcolor="#CCCCCC" uuid="4b8f685c-d2d7-4888-a733-35ff84f0365a"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Jenis Kelamin]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" mode="Opaque" x="460" y="0" width="95" height="15" forecolor="#736343" backcolor="#CCCCCC" uuid="935502e0-cb74-4039-9d38-9f91cd18413f"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Mengajar]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="59e84b71-2f1d-4f54-bfcf-f11d193ce031"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="92" height="15" uuid="7fcce9bc-7e36-42f8-8e70-12ea91fb070c"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{guru_nig}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="92" y="0" width="92" height="15" uuid="fff5bbd6-5c17-49c3-b257-6d7c01e7958f"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{guru_nama_guru}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="184" y="0" width="92" height="15" uuid="dac4d503-3b3d-49ba-9770-2ffc885cb60b"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{guru_tempat_lahir}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="276" y="0" width="92" height="15" uuid="eda8fe5d-3580-4e1d-8324-44d398c4e5e9"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{guru_tgl_lahir}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="368" y="0" width="92" height="15" uuid="10af9d6c-9731-41bc-8bed-48c48de2cc4e"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{guru_jk}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="460" y="0" width="95" height="15" uuid="8da2aa26-2238-4f93-a695-57b4ff73fd11"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA[$F{guru_mengajar}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="139" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="f1cc4825-fc90-48a8-8835-284e8e6bbca6"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="418" y="36" width="93" height="19" uuid="dc12433b-660e-4f39-898e-09cbe8c1606b"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Kepala Sekolah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="17" width="40" height="19" uuid="ec54f64c-926e-4d99-9d4e-a17f1a7376ec"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Bogor,]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="105" width="151" height="27" uuid="33e71e67-f8df-41d4-8043-ac77e8754b7d"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[( Siti Zuhriah, SPd, M.Pd.I )]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="429" y="17" width="126" height="19" uuid="c4bd74d3-d34f-4c5a-96d8-8ad46fe01dfb"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="a85dd094-cf55-4ad5-9c29-6262f7a0fefa"/>
+				<textField>
+					<reportElement style="Column header" x="424" y="0" width="80" height="20" forecolor="#736343" uuid="1c0a266d-4ad5-477a-898e-988eb90462f6"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+			</frame>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="483" y="1" width="40" height="20" forecolor="#736343" uuid="0ce10607-bbe5-486f-8bcd-2503862e99d6"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
